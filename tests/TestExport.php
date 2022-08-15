@@ -12,8 +12,9 @@ class TestExport extends TestCase
     {
         parent::setUp();
 
-        $this->exportApp = new \Cblink\ToolExportSdk\ToolExportApp([
-            'appid' => '12345678'
+        $this->exportApp = new \Cblink\Service\ToolExportSdk\ToolExportApp([
+            'appid' => '12345678',
+            'base_url' => '127.0.0.1'
         ]);
     }
 

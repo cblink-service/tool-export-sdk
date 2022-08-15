@@ -53,14 +53,6 @@ abstract class ServiceContainer extends Container
         return $this->config[$key] ?? $default;
     }
 
-    /**
-     * @return string
-     */
-    public function baseUrl()
-    {
-        return $this->base_url;
-    }
-
     protected function registerProviders(array $providers)
     {
         foreach ($providers as $provider) {

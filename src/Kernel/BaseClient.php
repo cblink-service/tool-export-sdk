@@ -77,6 +77,6 @@ class BaseClient
      */
     protected function url($uri = ''): string
     {
-        return rtrim($this->app->baseUrl(), '/') . '/' . ltrim($uri, '/');
+        return rtrim($this->config['base_url'], '/') . '/' . ltrim($uri, '/');
     }
 }
