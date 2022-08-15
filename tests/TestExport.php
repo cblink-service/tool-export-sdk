@@ -13,14 +13,14 @@ class TestExport extends TestCase
         parent::setUp();
 
         $this->exportApp = new \Cblink\Service\ToolExportSdk\ToolExportApp([
-            'appid' => '12345678',
-            'base_url' => '127.0.0.1'
+            'base_url' => 'http://127.0.0.1:9503'
         ]);
     }
 
     public function testCreateTask()
     {
         $response = $this->exportApp->export->createTask([
+            'appid' => '12345678',
             'name' => 'test',
             'headers' => ['标题 1', '标题 2', '标题 3'],
             'file_name' => 'test001',
@@ -33,8 +33,9 @@ class TestExport extends TestCase
     public function testUploadAppendFile()
     {
         $response = $this->exportApp->export->uploadAppendFile([
+            'appid' => '12345678',
             'push_total' => '1',
-            'task_id' => 15,
+            'task_id' => 18,
             'data' => [[1,2,3]], // 提交的数据
         ]);
 
@@ -43,7 +44,7 @@ class TestExport extends TestCase
 
     public function testShowTask()
     {
-        $response = $this->exportApp->export->showTask(15);
+        $response = $this->exportApp->export->showTask(15, ['appid' => '12345678']);
 
         $this->assertTrue($response['err_code'] == 0);
     }

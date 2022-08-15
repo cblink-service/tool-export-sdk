@@ -10,45 +10,44 @@
 
 namespace Cblink\Service\ToolExportSdk\Export;
 
-use Cblink\Service\ToolExportSdk\Kernel\BaseClient;
+use Cblink\Service\ToolExportSdk\Kernel\BaseApi;
 
-class Client extends BaseClient
+class Client extends BaseApi
 {
-
     /**
      * 创建任务
      *
      * @param array $params
-     * @return mixed
-     * @throws \Cblink\Service\ToolExportSdk\Kernel\Exception\ToolExportException
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function createTask(array $params)
     {
-        return $this->sendRequest('post', 'api/task', $params);
+        return $this->httpPost('/api/task', $params);
     }
 
     /**
      * 追加上传
      *
      * @param array $params
-     * @return mixed
-     * @throws \Cblink\Service\ToolExportSdk\Kernel\Exception\ToolExportException
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function uploadAppendFile(array $params)
     {
-        return $this->sendRequest('post', 'api/task/upload', $params);
+        return $this->httpPost('/api/task/upload', $params);
     }
 
     /**
      * 订单状态查询
      *
      * @param $id
-     * @return mixed
-     * @throws \Cblink\Service\ToolExportSdk\Kernel\Exception\ToolExportException
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function showTask($id)
+    public function showTask($id, array $params)
     {
-        return $this->sendRequest('get', sprintf('api/task/%s', $id));
+        return $this->httpGet(sprintf('/api/task/%s', $id), $params);
     }
 
 }

@@ -4,24 +4,19 @@
 namespace Cblink\Service\ToolExportSdk;
 
 
-use Cblink\Service\ToolExportSdk\Kernel\ServiceContainer;
+use Cblink\Service\Foundation\Container;
+use Hyperf\Utils\Collection;
 
 /**
  * @property Export\Client $export
  * Class ToolExportApp
  * @package Cblink\Service\ToolExportApp
  */
-class ToolExportApp extends ServiceContainer
+class ToolExportApp extends Container
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected function getCustomProviders(): array
-    {
-        return [
-            Export\ServiceProvider::class,
-        ];
-    }
+    protected array $providers = [
+        Export\ServiceProvider::class,
+    ];
 
 
 }
