@@ -6,7 +6,7 @@
 ## Installing
 
 ```shell
-$ composer require cblink/tool-export-sdk -vvv
+$ composer require cblink-service/tool-export-sdk -vvv
 ```
 
 ## Usage
