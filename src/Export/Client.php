@@ -15,6 +15,17 @@ use Cblink\Service\ToolExportSdk\Kernel\BaseApi;
 class Client extends BaseApi
 {
     /**
+     * 列表
+     *
+     * @param array $params
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function indexTask(array $params)
+    {
+        return $this->httpGet('/api/task', $params);
+    }
+    /**
      * 创建任务
      *
      * @param array $params
