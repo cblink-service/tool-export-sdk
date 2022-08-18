@@ -19,7 +19,7 @@ class TestExport extends TestCase
 
     public function testCreateTask()
     {
-        $response = $this->exportApp->export->createTask([
+        $response = $this->exportApp->task->create([
             'appid' => '12345678',
             'name' => 'test',
             'headers' => ['标题 1', '标题 2', '标题 3'],
@@ -32,7 +32,7 @@ class TestExport extends TestCase
 
     public function testUploadAppendFile()
     {
-        $response = $this->exportApp->export->uploadAppendFile([
+        $response = $this->exportApp->task->appendUpload([
             'appid' => '12345678',
             'push_total' => '1',
             'task_id' => 18,
@@ -44,7 +44,7 @@ class TestExport extends TestCase
 
     public function testShowTask()
     {
-        $response = $this->exportApp->export->showTask(15, ['appid' => '12345678']);
+        $response = $this->exportApp->task->show(15, ['appid' => '12345678']);
 
         $this->assertTrue($response['err_code'] == 0);
     }
