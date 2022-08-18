@@ -5,11 +5,11 @@ namespace Cblink\Service\ExportTool;
 use Cblink\Service\Foundation\Container;
 
 /**
- * @property Export\Client $export  导出
+ * @property Task\Client $task  导出任务
  */
 class Application extends Container
 {
     protected array $providers = [
-        Export\ServiceProvider::class,
+        Task\ServiceProvider::class,
     ];
 }

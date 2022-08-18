@@ -8,9 +8,10 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
-namespace Cblink\Service\ExportTool\Export;
+namespace Cblink\Service\ExportTool\Task;
 
 use Cblink\Service\ExportTool\Kernel\BaseApi;
+use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 
 class Client extends BaseApi
@@ -22,7 +23,7 @@ class Client extends BaseApi
      * @return array|\Psr\Http\Message\ResponseInterface|string
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function indexTask(array $params)
+    public function index(array $params = [])
     {
         return $this->httpGet('/api/task', $params);
     }
@@ -33,7 +34,7 @@ class Client extends BaseApi
      * @return array|\Psr\Http\Message\ResponseInterface|string
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function createTask(array $params)
+    public function create(array $params = [])
     {
         return $this->httpPost('/api/task', $params);
     }
@@ -45,7 +46,7 @@ class Client extends BaseApi
      * @return array|\Psr\Http\Message\ResponseInterface|string
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function uploadAppendFile(array $params)
+    public function appendUpload(array $params = [])
     {
         return $this->httpPost('/api/task/upload', $params);
     }
@@ -56,8 +57,9 @@ class Client extends BaseApi
      * @param $id
      * @param array $params
      * @return array|ResponseInterface|string
+     * @throws GuzzleException
      */
-    public function showTask($id, array $params)
+    public function show($id, array $params = [])
     {
         return $this->httpGet(sprintf('/api/task/%s', $id), $params);
     }

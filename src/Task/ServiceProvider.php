@@ -8,7 +8,7 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
-namespace Cblink\Service\ExportTool\Export;
+namespace Cblink\Service\ExportTool\Task;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -20,7 +20,7 @@ class ServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $pimple)
     {
-        $pimple['export'] = function ($pimple) {
+        $pimple['task'] = function ($pimple) {
             return new Client($pimple);
         };
     }
