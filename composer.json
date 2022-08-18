@@ -11,10 +11,6 @@
     "require": {
         "php": ">=7.4",
         "ext-json": "*",
-        "pimple/pimple": "^3.2",
-        "ramsey/uuid": "^3.6|^4.0",
-        "symfony/http-foundation": "^4.3|^5.1",
-        "guzzlehttp/guzzle": "^7.3|^6.3",
         "ext-simplexml": "*",
         "ext-openssl": "*",
         "cblink-service/foundation": "^1.2"
@@ -26,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Cblink\\Service\\ToolExportSdk\\": "src"
+            "Cblink\\Service\\ExportTool\\": "src"
         }
     }
 }

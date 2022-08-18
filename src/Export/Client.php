@@ -8,9 +8,10 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
-namespace Cblink\Service\ToolExportSdk\Export;
+namespace Cblink\Service\ExportTool\Export;
 
-use Cblink\Service\ToolExportSdk\Kernel\BaseApi;
+use Cblink\Service\ExportTool\Kernel\BaseApi;
+use Psr\Http\Message\ResponseInterface;
 
 class Client extends BaseApi
 {
@@ -53,8 +54,8 @@ class Client extends BaseApi
      * 订单状态查询
      *
      * @param $id
-     * @return array|\Psr\Http\Message\ResponseInterface|string
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $params
+     * @return array|ResponseInterface|string
      */
     public function showTask($id, array $params)
     {

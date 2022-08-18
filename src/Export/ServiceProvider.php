@@ -8,7 +8,7 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
-namespace Cblink\Service\ToolExportSdk\Export;
+namespace Cblink\Service\ExportTool\Export;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;

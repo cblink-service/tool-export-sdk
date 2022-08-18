@@ -2,7 +2,6 @@
 
 
 use PHPUnit\Framework\TestCase;
-use Ramsey\Uuid\Uuid;
 
 class TestExport extends TestCase
 {
@@ -12,8 +11,9 @@ class TestExport extends TestCase
     {
         parent::setUp();
 
-        $this->exportApp = new \Cblink\Service\ToolExportSdk\ToolExportApp([
-            'base_url' => 'http://127.0.0.1:9503'
+        $this->exportApp = new \Cblink\Service\ExportTool\Application([
+            'base_url' => 'http://127.0.0.1:9503',
+            'appid' => 'xxxxxxxx',
         ]);
     }
 
