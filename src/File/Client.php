@@ -17,7 +17,7 @@ use Psr\Http\Message\ResponseInterface;
 class Client extends BaseApi
 {
     /**
-     * 获取下载地址
+     * 获取文件的下载地址
      *
      * @param int $id  文件ID
      * @param array $params

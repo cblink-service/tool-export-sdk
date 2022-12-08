@@ -14,7 +14,7 @@ class BaseApi extends \Cblink\Service\Foundation\BaseApi
      */
     public function request(string $method = 'POST', string $url = '', array $options = [], $returnRaw = false)
     {
-        // todo 自动填充配置项的appid 后期将会移除
+        // 自动填充配置项的appid 后期将会移除
         if (isset($this->app->config['appid'])) {
 
             $structure = in_array(strtoupper($method), ['GET', 'DELETE']) ? 'query' : 'json';

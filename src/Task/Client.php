@@ -27,6 +27,20 @@ class Client extends BaseApi
     {
         return $this->httpGet('/api/task', $params);
     }
+
+    /**
+     * 任务详情
+     *
+     * @param $id
+     * @param array $params
+     * @return array|ResponseInterface|string
+     * @throws GuzzleException
+     */
+    public function show($id, array $params = [])
+    {
+        return $this->httpGet(sprintf('/api/task/%s', $id), $params);
+    }
+
     /**
      * 创建任务
      *
@@ -42,26 +56,13 @@ class Client extends BaseApi
     /**
      * 追加上传
      *
-     * @param array $params
-     * @return array|\Psr\Http\Message\ResponseInterface|string
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function appendUpload(array $params = [])
-    {
-        return $this->httpPost('/api/task/upload', $params);
-    }
-
-    /**
-     * 订单状态查询
-     *
      * @param $id
      * @param array $params
      * @return array|ResponseInterface|string
      * @throws GuzzleException
      */
-    public function show($id, array $params = [])
+    public function appendUpload($id, array $params = [])
     {
-        return $this->httpGet(sprintf('/api/task/%s', $id), $params);
+        return $this->httpPost(sprintf('/api/task/%s/upload', $id), $params);
     }
-
 }
